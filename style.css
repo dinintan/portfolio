@@ -1,200 +1,353 @@
+/* =========================
+   RESET & GLOBAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #fff5f8;
-    padding: 30px;
+    padding: 0;
     margin: 0;
+    color: #333;
+    overflow-x: hidden;
+
     background-image:
         radial-gradient(circle at 10% 20%, rgba(237, 71, 127, 0.15) 0, transparent 25%),
         radial-gradient(circle at 90% 40%, rgba(237, 71, 127, 0.12) 0, transparent 25%),
         radial-gradient(circle at 20% 85%, rgba(237, 71, 127, 0.10) 0, transparent 20%);
 }
 
-nav {
-    background-color: #ed477f;
-    padding: 15px;
-    margin-bottom: 50px;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-h1 {
-    color: #ed477f;
-    font-size: 40px;
+section {
+    scroll-margin-top: 80px;
 }
 
 p {
     color: #555;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 button {
     background-color: #ed477f;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 12px 22px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 
 button:hover {
-    background-color: #C2185B;
+    background-color: #c2185b;
+    transform: translateY(-3px);
 }
 
-#profil {
-    background-color: white;
-    padding: 30px;
-    margin: 50px auto;
-    max-width: 700px;
-    border-radius: 15px;
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+nav {
+    background-color: #ed477f;
+    padding: 16px 20px;
+    margin: 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 14px;
+    font-weight: bold;
+    font-size: 14px;
+
+    transition: 0.3s ease;
 }
 
-li {
-    display: inline-block;
-    background-color: white;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
+nav a:hover {
+    opacity: 0.75;
 }
 
-#projects {
-    margin-top: 60px;
-}
 
-.project-card {
-    background-color: white;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 15px;
-}
+/* =========================
+   HOME / HERO
+   ========================= */
+
 #home {
-    padding: 80px 20px;
-    min-height: 300px;
+    padding: 100px 20px 80px;
+    min-height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
 
 #home h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    color: #ed477f;
+    font-size: 52px;
+    margin: 0 0 15px;
+    line-height: 1.2;
+    letter-spacing: 1px;
 }
 
 #home p {
+    max-width: 650px;
     font-size: 18px;
+    margin: 8px auto;
 }
-#profil h2 {
+
+#home p:last-child {
+    display: inline-block;
+
+    background-color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
     color: #ed477f;
-    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+#profil h2,
+#skills h2,
+#projects h2,
+#experience h2,
+#contact h2 {
+    color: #ed477f;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SEMUA CARD
+   ========================= */
+
+#profil,
+.skill-category,
+.project-card,
+.experience-card {
+    background-color: white;
+
+    border-radius: 20px;
+
+    border-left: 5px solid #ed477f;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* EFEK SAAT MOUSE DIARAHKAN */
+
+#profil:hover,
+.skill-category:hover,
+.project-card:hover,
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   TENTANG SAYA
+   ========================= */
+
+#profil {
+    padding: 40px;
+    margin: 40px auto;
+
+    max-width: 760px;
+}
+
+#profil h2 {
+    margin-top: 0;
 }
 
 #profil p {
     max-width: 650px;
-    margin: 0 auto;
+    margin: 0 auto 18px;
 }
+
+#profil p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   SKILLS
+   ========================= */
+
 #skills {
-    margin-top: 60px;
-    padding: 30px 20px;
+    margin-top: 70px;
+    padding: 40px 20px;
 }
 
 #skills h2 {
-    color: #ed477f;
-    margin-bottom: 25px;
-}
-
-#skills li {
-    min-width: 120px;
-    font-weight: bold;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-#projects h2 {
-    color: #ed477f;
-    margin-bottom: 25px;
-}
-
-.project-card {
-    background-color: white;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.project-card h3 {
-    color: #ed477f;
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    margin-bottom: 20px;
-}
-#contact {
-    margin-top: 80px;
-    padding: 60px 20px;
-}
-
-#contact h2 {
-    color: #ed477f;
-    margin-bottom: 15px;
-}
-
-#contact p {
-    margin-bottom: 25px;
+    margin-top: 0;
 }
 
 .skill-category {
-    background-color: white;
-    max-width: 700px;
+    max-width: 760px;
+
     margin: 25px auto;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
 }
 
 .skill-category h3 {
     color: #ed477f;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .skill-category li {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+
+    background-color: #fff5f8;
+    color: #444;
+
+    padding: 10px 16px;
+    margin: 5px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
 }
+
+.skill-category li:hover {
+    background-color: #ed477f;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PROJECTS
+   ========================= */
+
+#projects {
+    margin-top: 70px;
+    padding: 40px 20px;
+
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+}
+
+#projects h2 {
+    margin-top: 0;
+}
+
+.project-card {
+    max-width: 760px;
+
+    margin: 25px auto;
+    padding: 32px;
+
+    text-align: left;
+}
+
+
+/* JANGAN ADA BORDER TAMBAHAN DI PROJECT */
+
+.project-card:first-of-type {
+    border-left: 5px solid #ed477f;
+}
+
+.project-card h3 {
+    color: #ed477f;
+
+    margin: 0 0 12px;
+
+    font-size: 21px;
+}
+
+.project-card p {
+    margin: 8px 0 18px;
+
+    font-size: 15px;
+}
+
+.project-card strong {
+    color: #ed477f;
+}
+
+.project-card a {
+    text-decoration: none;
+}
+
+.project-card button {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   EXPERIENCE
+   ========================= */
+
 #experience {
-    margin-top: 60px;
-    padding: 30px 20px;
+    margin-top: 70px;
+    padding: 40px 20px;
 }
 
 #experience h2 {
-    color: #ed477f;
-    margin-bottom: 25px;
+    margin-top: 0;
 }
 
 .experience-card {
-    background-color: white;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 760px;
+
+    margin: 25px auto;
+    padding: 30px;
+
     text-align: left;
 }
 
 .experience-card h3 {
     color: #ed477f;
-    margin-bottom: 5px;
+
+    margin: 0 0 6px;
+
+    font-size: 20px;
 }
 
 .experience-card p {
@@ -203,30 +356,309 @@ li {
 
 .experience-card ul {
     list-style: disc;
-    padding-left: 20px;
+    padding-left: 22px;
 }
 
 .experience-card li {
     display: list-item;
+
     background-color: transparent;
+
     padding: 0;
     margin: 8px 0;
-    border-radius: 0;
+
+    line-height: 1.6;
 }
-html {
-    scroll-behavior: smooth;
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+#contact {
+    margin-top: 70px;
+    padding: 70px 20px;
 }
-section {
-    scroll-margin-top: 80px;
+
+#contact h2 {
+    margin-top: 0;
 }
+
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+
+/* CONTACT BUTTONS */
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    display: inline-block;
+
+    min-width: 150px;
+
+    padding: 13px 20px;
+
+    background-color: white;
+    color: #ed477f;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.contact-links a:hover {
+    background-color: #ed477f;
+    color: white;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
 footer {
-    margin-top: 60px;
-    padding: 20px;
+    margin-top: 50px;
+
+    padding: 25px 20px;
+
     background-color: #ed477f;
 }
 
 footer p {
     color: white;
+
     margin: 0;
+
     font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 12px 8px;
+    }
+
+    nav a {
+        display: inline-block;
+
+        margin: 5px 6px;
+
+        font-size: 12px;
+    }
+
+    #home {
+        padding: 70px 20px 60px;
+        min-height: auto;
+    }
+
+    #home h1 {
+        font-size: 38px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    #profil,
+    .skill-category,
+    .project-card,
+    .experience-card {
+        width: calc(100% - 20px);
+        max-width: 760px;
+    }
+
+    #profil {
+        padding: 30px 22px;
+        margin-top: 30px;
+    }
+
+    #skills,
+    #projects,
+    #experience {
+        padding: 30px 10px;
+        margin-top: 45px;
+    }
+
+    .skill-category {
+        padding: 25px 18px;
+    }
+
+    .project-card {
+        padding: 25px 20px;
+    }
+
+    .experience-card {
+        padding: 25px 20px;
+    }
+
+    #contact {
+        padding: 50px 20px;
+        margin-top: 45px;
+    }
+}
+
+
+/* =========================
+   HP
+   ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        padding: 10px 5px;
+    }
+
+    nav a {
+        margin: 4px;
+        font-size: 11px;
+    }
+
+    #home {
+        padding: 60px 15px 50px;
+    }
+
+    #home h1 {
+        font-size: 31px;
+    }
+
+    #home p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    #home p:last-child {
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+
+
+    /* CARD HP */
+
+    #profil,
+    .skill-category,
+    .project-card,
+    .experience-card {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        padding: 22px 17px;
+
+        border-radius: 16px;
+
+        border-left: 5px solid #ed477f;
+    }
+
+
+    #profil h2,
+    #skills h2,
+    #projects h2,
+    #experience h2,
+    #contact h2 {
+        font-size: 25px;
+    }
+
+    #profil p,
+    .project-card p,
+    .experience-card p,
+    .experience-card li {
+        font-size: 14px;
+    }
+
+    .skill-category h3 {
+        font-size: 17px;
+    }
+
+    .skill-category li {
+        font-size: 12px;
+
+        padding: 8px 11px;
+
+        margin: 3px;
+    }
+
+    .project-card h3,
+    .experience-card h3 {
+        font-size: 18px;
+    }
+
+
+    /* CONTACT */
+
+    #contact {
+        padding: 45px 15px;
+    }
+
+    #contact p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-links a {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 30px;
+        padding: 20px 15px;
+    }
+
+
+    /* HOVER HP LEBIH HALUS */
+
+    #profil:hover,
+    .skill-category:hover,
+    .project-card:hover,
+    .experience-card:hover {
+        transform: translateY(-3px);
+    }
 }
