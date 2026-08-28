@@ -671,3 +671,8 @@ footer p {
     margin: 20px auto 0;
     border-radius: 10px;
 }
+
+.moc-image {
+    width: 40% !important;
+    max-width: 150px !important;
+}
